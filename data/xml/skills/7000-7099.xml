@@ -106,7 +106,7 @@
 	</skill>
 	<skill id="7029" levels="4" name="Super Haste">
 		<!-- GM Skill -->
-		<table name="#amount"> 1.25 1.5 1.75 2 </table>
+		<table name="#amount"> 1.25 1.5 1.75 5 </table>
 		<table name="#reuse"> 0.75 0.50 0.25 0.01 </table>
 		<set name="skillType" val="CONT"/>
 		<set name="operateType" val="OP_TOGGLE"/>

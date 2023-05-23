@@ -218,24 +218,24 @@ public class Valakas extends L2AttackableAIScript
 			}
 		}
 		// Spawn cinematic, regen_task and choose of skill.
-		else if (event.equalsIgnoreCase("spawn_1"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1800, 180, -1, 1500, 10000, 0, 0, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_2"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1300, 180, -5, 3000, 10000, 0, -5, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_3"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 500, 180, -8, 600, 10000, 0, 60, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_4"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 800, 180, -8, 2700, 10000, 0, 30, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_5"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 200, 250, 70, 0, 10000, 30, 80, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_6"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1100, 250, 70, 2500, 10000, 30, 80, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_7"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 700, 150, 30, 0, 10000, -10, 60, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_8"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1200, 150, 20, 2900, 10000, -10, 30, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_9"))
-			VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_1"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1800, 180, -1, 1500, 10000, 0, 0, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_2"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1300, 180, -5, 3000, 10000, 0, -5, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_3"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 500, 180, -8, 600, 10000, 0, 60, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_4"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 800, 180, -8, 2700, 10000, 0, 30, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_5"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 200, 250, 70, 0, 10000, 30, 80, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_6"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1100, 250, 70, 2500, 10000, 30, 80, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_7"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 700, 150, 30, 0, 10000, -10, 60, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_8"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1200, 150, 20, 2900, 10000, -10, 30, 1, 0));
+		// else if (event.equalsIgnoreCase("spawn_9"))
+		// 	VALAKAS_LAIR.broadcastPacket(new SpecialCamera(npc.getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
 		else if (event.equalsIgnoreCase("spawn_10"))
 		{
 			GrandBossManager.getInstance().setBossStatus(VALAKAS, FIGHTING);
