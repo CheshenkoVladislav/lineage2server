@@ -15,12 +15,15 @@
 package net.sf.l2j.gameserver.datatables;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
 import net.sf.l2j.gameserver.model.L2Skill;
 import net.sf.l2j.gameserver.skills.DocumentSkill;
+import net.sf.l2j.gameserver.skills.effects.EffectTemplate;
 
 public class SkillTable
 {
@@ -52,6 +55,8 @@ public class SkillTable
 		1327
 	};
 	
+	private int[] buffSkillIds;
+	
 	public static SkillTable getInstance()
 	{
 		return SingletonHolder._instance;
@@ -64,15 +69,31 @@ public class SkillTable
 	
 	private void load()
 	{
+		initBuffsWithCustomTime();
 		final File dir = new File("./data/xml/skills");
-		
 		for (File file : dir.listFiles())
 		{
 			DocumentSkill doc = new DocumentSkill(file);
 			doc.parse();
 			
 			for (L2Skill skill : doc.getSkills())
+			{
+				if (Arrays.binarySearch(buffSkillIds, skill.getId()) > -1)
+				{
+					List<EffectTemplate> effectTemplates = skill.getEffectTemplates();
+					if (effectTemplates.size() > 0)
+					{
+						for (EffectTemplate effectTemplate : effectTemplates)
+						{
+							if (effectTemplate.period > 0)
+							{
+								effectTemplate.period = 4200;
+							}
+						}
+					}
+				}
 				_skills.put(getSkillHashCode(skill), skill);
+			}
 		}
 		
 		_log.info("SkillTable: Loaded " + _skills.size() + " skills.");
@@ -103,6 +124,14 @@ public class SkillTable
 			_nobleSkills[i] = getInfo(_nobleSkillsId[i], 1);
 	}
 	
+	private void initBuffsWithCustomTime()
+	{
+		String skillDurationString = "271,4200;272,4200;273,4200;274,4200;275,4200;276,4200;277,4200;307,4200;309,4200;310,4200;311,4200;366,4200;367,4200;530,4200;264,4200;265,4200;266,4200;267,4200;268,4200;269,4200;270,4200;304,4200;305,4200;306,4200;308,4200;349,4200;363,4200;364,4200;437,4200;529,4200;1002,4200;1003,4200;1005,4200;1006,4200;1007,4200;1009,4200;1010,4200;1229,4200;1251,4200;1252,4200;1253,4200;1284,4200;1308,4200;1309,4200;1310,4200;1362,4200;1363,4200;1390,4200;1391,4200;1413,4200;1461,4200;1353,4200;1311,4200;1307,4200;1204,4200;1085,4200;1078,4200;1077,4200;1062,4200;1044,4200;1043,4200;1035,4200;1068,4200;1040,4200;1073,4200;1191,4200;1189,4200;1182,4200;1033,4200;1259,4200;1032,4200;1036,4200;1045,4200;1048,4200;1086,4200;1240,4200;1242,4200;1243,4200;1388,4200;1389,4200;1392,4200;1393,4200;1352,4200;1355,4200;1356,4200;1357,4200;1087,4200;1257,4200;1397,4200;1304,4200;1303,4200;1354,4200;1059,4200;1268";
+		String [] skillDurations = skillDurationString.split(",4200;");
+		buffSkillIds = Arrays.stream(skillDurations).mapToInt(Integer::parseInt).toArray();
+		Arrays.sort(buffSkillIds);
+	}
+	
 	public void reload()
 	{
 		_skills.clear();
@@ -123,7 +152,7 @@ public class SkillTable
 	
 	/**
 	 * Centralized method for easier change of the hashing sys
-	 * @param skillId The Skill Id
+	 * @param skillId    The Skill Id
 	 * @param skillLevel The Skill Level
 	 * @return The Skill hash number
 	 */

@@ -44,7 +44,7 @@ public final class EffectTemplate
 	public final Condition applayCond;
 	public final Lambda lambda;
 	public final int counter;
-	public final int period; // in seconds
+	public int period; // in seconds
 	public final AbnormalEffect abnormalEffect;
 	public List<FuncTemplate> funcTemplates;
 	public final String stackType;
