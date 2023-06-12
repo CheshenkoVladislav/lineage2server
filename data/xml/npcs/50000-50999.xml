@@ -70,7 +70,7 @@
 			<skill id="4416" level="16"/>
 		</skills>
 	</npc>
-		<npc id="50008" idTemplate="30519" name="Tryskell" title="Crappy Buffer">
+	<npc id="50008" idTemplate="30519" name="Tryskell" title="Crappy Buffer">
 		<set name="level" val="70"/>
 		<set name="radius" val="7"/>
 		<set name="height" val="18"/>
@@ -139,5 +139,35 @@
 			<skill id="4045" level="1"/>
 			<skill id="4416" level="18"/>
 		</skills>
+	</npc>
+	<npc id="50010" idTemplate="35187" name="Anatoly" title="GM Shop">
+		<set name="level" val="75"/>
+		<set name="radius" val="9.5"/>
+		<set name="height" val="22.5"/>
+		<set name="rHand" val="0"/>
+		<set name="lHand" val="0"/>
+		<set name="type" val="L2Merchant"/>
+		<set name="exp" val="0"/>
+		<set name="sp" val="0"/>
+		<set name="hp" val="2676.65854"/>
+		<set name="mp" val="1507.8"/>
+		<set name="hpRegen" val="8.5"/>
+		<set name="mpRegen" val="3"/>
+		<set name="pAtk" val="794.70901"/>
+		<set name="pDef" val="319.24623"/>
+		<set name="mAtk" val="542.68324"/>
+		<set name="mDef" val="233.61053"/>
+		<set name="crit" val="4"/>
+		<set name="atkSpd" val="253"/>
+		<set name="str" val="40"/>
+		<set name="int" val="21"/>
+		<set name="dex" val="30"/>
+		<set name="wit" val="20"/>
+		<set name="con" val="43"/>
+		<set name="men" val="20"/>
+		<set name="corpseTime" val="7"/>
+		<set name="walkSpd" val="50"/>
+		<set name="runSpd" val="120"/>
+		<set name="dropHerbGroup" val="0"/>
 	</npc>
 </list>
