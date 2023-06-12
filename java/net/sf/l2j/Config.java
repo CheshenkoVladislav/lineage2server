@@ -224,6 +224,7 @@ public final class Config
 	// --------------------------------------------------
 	
 	/** Geodata */
+	public static String GEODATA_SRC_PATH;
 	public static String GEODATA_PATH;
 	public static int COORD_SYNCHRONIZE;
 	
@@ -912,6 +913,7 @@ public final class Config
 	{
 		final ExProperties geoengine = initProperties(GEOENGINE_FILE);
 		GEODATA_PATH = geoengine.getProperty("GeoDataPath", "./data/geodata/");
+		GEODATA_SRC_PATH = geoengine.getProperty("GeoDataSrcPath", "./data/geodatasrc/");
 		COORD_SYNCHRONIZE = geoengine.getProperty("CoordSynchronize", -1);
 		
 		PART_OF_CHARACTER_HEIGHT = geoengine.getProperty("PartOfCharacterHeight", 75);

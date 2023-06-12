@@ -125,7 +125,7 @@ public final class GeoDataConverter
 	private static final boolean loadGeoBlocks(String filename)
 	{
 		// region file is load-able, try to load it
-		try (RandomAccessFile raf = new RandomAccessFile(Config.GEODATA_PATH + filename, "r"); FileChannel fc = raf.getChannel())
+		try (RandomAccessFile raf = new RandomAccessFile(Config.GEODATA_SRC_PATH + filename, "r"); FileChannel fc = raf.getChannel())
 		{
 			MappedByteBuffer buffer = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size()).load();
 			buffer.order(ByteOrder.LITTLE_ENDIAN);
